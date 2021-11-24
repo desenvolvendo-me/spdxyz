@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :subscriptions do
     collection do
+      get 'read'
       post 'write'
     end
   end
