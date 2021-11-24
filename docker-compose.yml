@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  postgresdb:
+    container_name: spdxyz-postgres
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "54321:5432"
+  redis:
+    container_name: spdxyz-redis
+    image: redis
+    ports:
+      - "63791:6379"
