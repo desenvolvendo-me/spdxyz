@@ -14,3 +14,9 @@ services:
     image: redis
     ports:
       - "63791:6379"
+  rabbitmq:
+    container_name: spdxyz-rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"
+      - "5672:5672"
