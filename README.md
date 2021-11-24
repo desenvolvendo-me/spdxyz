@@ -1,5 +1,13 @@
 # README
+## Running
+```
+docker-compose up
+```
 
+```
+rails db:create db:migrate
+rails s
+```
 ## Sidekiq in Heroku
 [Fonte](https://www.bigbinary.com/learn-rubyonrails-book/sidekiq-in-heroku)
 ### Set Env
