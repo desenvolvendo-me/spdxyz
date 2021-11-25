@@ -17,6 +17,10 @@ class QueueService
     end
   end
 
+  def publish(payload = nil)
+    @exchange.publish(JSON.generate(payload), :routing_key => @queue.name)
+  end
+
   private
 
   def connect

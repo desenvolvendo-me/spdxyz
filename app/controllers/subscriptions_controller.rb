@@ -7,9 +7,15 @@ class SubscriptionsController < ApplicationController
   end
 
   def write
-    SubscribeJob.perform_later(params["name"])
+    SubscribeJob.perform_later(subscription_params)
 
-    render json: { message: "#{params["name"]}, sua inscrição na turma SPDv1.7 foi realizada com sucesso!" }
+    render json: { message: "#{subscription_params["aluno"]}, sua inscrição na turma SPDv1.7 foi realizada com sucesso!" }
+  end
+
+  private
+
+  def subscription_params
+    params.permit(:aluno, turma: [:nome])
   end
 
 end
