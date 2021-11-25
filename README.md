@@ -13,14 +13,13 @@ rails s
 ### Set Env
 - REDIS_URL
 - REDIS_PASSWORD
-### Procfile
-```
-web: bundle exec puma -C config/puma.rb
-worker: bundle exec sidekiq -e production -C config/sidekiq.yml
-release: bundle exec rake db:migrate
-```
+- RABBITMQ_URL
 ### Active Dynos
 ```
 heroku ps:scale web=1
 heroku ps:scale worker+1
+```
+### Dynos Manual
+```
+heroku run bundle exec rake rabbitmq:subscribe
 ```
