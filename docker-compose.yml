@@ -3,8 +3,6 @@ services:
   postgresdb:
     container_name: spdxyz-postgres
     image: postgres
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: postgres
     ports:
