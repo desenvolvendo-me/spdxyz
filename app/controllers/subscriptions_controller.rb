@@ -10,7 +10,6 @@ class SubscriptionsController < ApplicationController
     SubscribeJob.perform_later(subscription_params)
 
     render json: { message: "#{subscription_params["aluno"]}, sua inscrição na turma SPDv1.7 foi realizada com sucesso!" }
-    
   end
 
   private
